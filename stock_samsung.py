@@ -12,13 +12,7 @@ high_prices = data["고가"].values
 low_prices = data["저가"].values
 mid_prices = (high_prices + low_prices) / 2
 
-seq_len = 50
-sequence_length = seq_len + 1
-
-result = [
-    mid_prices[index : index + sequence_length]
-    for index in range(len(mid_prices) - sequence_length)
-]
+result = [mid_prices[index: index + 51] for index in range(len(mid_prices) - 51)]
 normalized_data = [[((float(p) / float(window[0])) - 1) for p in window] for window in result]
 result = np.array(normalized_data)
 
