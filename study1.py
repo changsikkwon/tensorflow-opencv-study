@@ -31,7 +31,7 @@ dnn = keras.Sequential()
 dnn.add(Dense(units=1, input_shape=(1,)))
 dnn.compile(optimizer="sgd", loss="mse")
 dnn.summary()
-dnn.fit(x_new, y, epochs=10)
+dnn.fit(x_new, y, epochs=1000)
 
 y_hat_dnn = dnn.predict(x_test)
 print(y_hat_dnn)
